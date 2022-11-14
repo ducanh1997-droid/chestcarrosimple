@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tạo bàn cờ carro đơn giản</title>
+</head>
+<body>
+    <h1>Carro game simple</h1>
+    <p id="data"></p>
+    <button onclick="changevalue()">Change Value</button>
+</body>
+<script>
+    let p =document.getElementById("data");
+    p.innerHTML = "";
+    let table = [
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0]
+    ];
+    let data = "";
+    for(let i = 0;i<table.length;i++){
+        p.innerHTML += "<br>";
+        for(let j =0;j<table[i].length;j++){
+            p.innerHTML += table[i][j] + " ";
+        }
+    }
+
+    function changevalue(){
+        let X = +prompt("Nhập vị trí mảng");
+        let Y = +prompt("Nhập vị trí giá trị trong mảng");
+
+        table[X][Y] = "x";
+        p.innerHTML = "";
+        for(let i = 0;i<table.length;i++){
+            p.innerHTML += "<br>";
+            for(let j =0;j<table[i].length;j++){
+                p.innerHTML += table[i][j] + " ";
+            }
+        }
+        console.log(table[X][Y]);
+    }
+</script>
+</html>
